@@ -8,7 +8,7 @@ const Produto = require('./models/produto.model')
 
 app.use(express.json())
 app.use(cors())
-
+mongoose.set("strictQuery", false);
 mongoose.connect(process.env.DATABASE)
 .then(() => {
     console.log('MongoDB conectado com sucesso!')
